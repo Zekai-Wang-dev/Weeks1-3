@@ -74,6 +74,12 @@ public class Slashes : MonoBehaviour
                 transform.localScale = new Vector3(0.13f, 10 * curve.Evaluate(t), 1);
                 sr.color = new Color(0, 0, 1, curve.Evaluate(t));
 
+                //Change the color of the slash to red so that it shows the enemy getting hit 
+                if (transform.position.x >= -1.56 && transform.position.y <= 2.51 && transform.position.x <= 1.95 && transform.position.y >= -2.93)
+                {
+                    sr.color = new Color(1, 0, 0, curve.Evaluate(t));
+                }
+
                 //Return all values to default when the loop ends
                 if (transform.position == position[0])
                 {
@@ -94,6 +100,12 @@ public class Slashes : MonoBehaviour
                 transform.up = position[count+1];
                 transform.localScale = new Vector3(0.13f, 10 * curve.Evaluate(t), 1);
                 sr.color = new Color(0, 0, 1, curve.Evaluate(t));
+
+                //Change the color of the slash to red so that it shows the enemy getting hit
+                if (transform.position.x >= -1.56 && transform.position.y <= 2.51 && transform.position.x <= 1.95 && transform.position.y >= -2.93)
+                {
+                    sr.color = new Color(1, 0, 0, curve.Evaluate(t));
+                }
 
                 //Count up the amount of slashes occured and reset the time to 0 so that the slashes could continue 
                 if (transform.position == position[count + 1])
