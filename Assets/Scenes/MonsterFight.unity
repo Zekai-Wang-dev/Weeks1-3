@@ -425,7 +425,7 @@ Transform:
   m_GameObject: {fileID: 362196795}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.0483, y: 0.38300002, z: 0}
+  m_LocalPosition: {x: 10.23, y: 0.38300002, z: 0}
   m_LocalScale: {x: 0.13761152, y: 3.7680645, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -448,31 +448,31 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.004169464
-      value: 0.9905739
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      time: 0
+      value: 0
+      inSlope: 1.9971057
+      outSlope: 1.9971057
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.56338584
-      value: 0.03183517
-      inSlope: 1.3684385
-      outSlope: 1.3684385
-      tangentMode: 0
+      time: 0.49539924
+      value: 0.9893646
+      inSlope: 0.010526359
+      outSlope: 0.010526359
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.9874878
-      value: 0.99292374
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
+      time: 0.9917908
+      value: 0.008468628
+      inSlope: -1.976053
+      outSlope: -1.976053
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -481,6 +481,7 @@ MonoBehaviour:
   count: 0
   position: []
   slashing: 0
+  slashSpeed: 0
 --- !u!1 &379322934
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 775779778}
   - component: {fileID: 775779777}
+  - component: {fileID: 775779779}
   m_Layer: 0
   m_Name: monster
   m_TagString: Untagged
@@ -844,6 +846,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &775779779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775779776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf45dce02d41df140b0980d091904010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  velocity: {x: 0, y: 0}
+  transform: {fileID: 775779778}
+  switchDirection: 0
+  maxY: 0
+  minY: 0
 --- !u!1 &1447670446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,7 +1026,7 @@ Transform:
   m_GameObject: {fileID: 1548984059}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.38, y: -1.56, z: 0}
+  m_LocalPosition: {x: -0.03, y: -1.56, z: 0}
   m_LocalScale: {x: 2.1382225, y: 2.1405115, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

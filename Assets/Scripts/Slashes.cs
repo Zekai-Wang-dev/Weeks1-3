@@ -25,13 +25,19 @@ public class Slashes : MonoBehaviour
     public List<Vector3> position;
 
     //A boolean to start the slashes so that it makes it seem like the player is attacking 
-    public bool slashing = false; 
+    public bool slashing = false;
+
+    //Speed of the slashes so that it's easier to control what makes the slashes appear better
+    public float slashSpeed; 
 
     // Start is called before the first frame update
     void Start()
     {
         //Initialize the time so that I could add to the variable instead of making t just time. 
-        t = Time.deltaTime*1.5f;
+        t = 0;
+
+        //Initialize the speed value so that the professor doesn't have to do it
+        slashSpeed = 4f; 
 
         //Add a starting position so that the below code does not return null and it also makes it look like the slashes came from the person 
         position.Add(new Vector3(13, -10, 0));
@@ -40,8 +46,6 @@ public class Slashes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Count the time for the curve
-        t += Time.deltaTime*1.5f;
 
         //Add a position once the player left clicks so that they could store wherever they want the slashes to be
         if (Input.GetMouseButtonDown(0))
@@ -58,6 +62,9 @@ public class Slashes : MonoBehaviour
         //Start the slashing sequence from a list of wherever the player clicked
         if (slashing == true)
         {
+            //Count the time for the curve
+            t += Time.deltaTime * slashSpeed;
+
             //Checks if the current slash is the last slash and make it go back to the original point 
             if (count + 1 >= position.Count)
             {
@@ -84,7 +91,7 @@ public class Slashes : MonoBehaviour
             {
                 //Changes the position of the slash as well as its scale and transparency 
                 transform.position = Vector3.Lerp(position[count], position[count + 1], t);
-                transform.up = position[count];
+                transform.up = position[count+1];
                 transform.localScale = new Vector3(0.13f, 10 * curve.Evaluate(t), 1);
                 sr.color = new Color(0, 0, 1, curve.Evaluate(t));
 
